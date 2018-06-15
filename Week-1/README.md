@@ -77,7 +77,7 @@ Today, you'll be creating your first GET and POST API's. If you don't know what 
  There are a lot of reousrces on Google on how to build API's with express. Please google these resources if you're stuck. 
  
  
- #### Step 4
+ #### Step 4: Push your changes to Git
  
  Push all your changes to your GitHub Repo. 
 
