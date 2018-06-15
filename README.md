@@ -6,6 +6,7 @@ In line with our motivation to help as many people as possible across the globe 
 
 * General
   * [Guidelines](/Guidelines/README.md)
+  * [Onboarding Checklist](/checklist/README.md)
 * Course
   * [Week 1](/Week-1/README.md)   
 * Contribute
