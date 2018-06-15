@@ -1,4 +1,4 @@
-# Web Development - HackerBAy University
+# Web Development - HackerBay University
 
 This handbook is the central repository containing all the learning resources that every participant will go through and the tasks that they'll perform as a part of the curriculum in the program. 
 
