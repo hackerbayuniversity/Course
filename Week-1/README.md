@@ -12,7 +12,7 @@ Topic | Resource
 ------------ | -------------
 HTML and CSS | [Link to this resource](https://www.youtube.com/watch?v=yTHTo28hwTQ&list=PLgGbWId6zgaWZkPFI4Sc9QXDmmOWa1v5F)
 JavaScript for beginners | [Link to this resource](https://www.youtube.com/watch?v=yQaAGmHNn9s&list=PL46F0A159EC02DF82)
-Serverside Programming with NodeJS | [Link to this resource](https://www.youtube.com/watch?v=yQaAGmHNn9s&list=PL46F0A159EC02DF82)
+Serverside Programming with NodeJS | [Link to this resource](https://www.youtube.com/watch?v=65a5QQ3ZR2g&list=PL55RiY5tL51oGJorjEgl6NVeDbx_fO5jR)
 Algorithms | [Link to this resource](https://www.coursera.org/learn/algorithms-part1)
 PostgreSQL | [Link to this resource](https://www.youtube.com/watch?v=CkjQSkWl0F0&list=PLFRIKEguV54bgwAcgFiOs5GMo3q2DhVDj)
 
