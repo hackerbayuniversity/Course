@@ -1,5 +1,9 @@
 # Task 1 - Your first API
 
+## Objectives
+
+- Learn how server programming works and create your first get and post API. 
+
 ## Learning Resources
 
 This document contains a list of topics that you need to learn and implement on Week 1. 

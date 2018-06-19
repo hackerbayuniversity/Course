@@ -1,5 +1,11 @@
 # Task 2 - Connecting to your database.
 
+## Objectives
+
+- Learn how to connect to database from your backend. 
+- Learn how to save and query data from yoru databse. 
+- Learn Authentication with Passport + JWT. 
+
 ## Learning Resources
 
 Here are the list of learning resources for this task. 
