@@ -14,6 +14,10 @@ As soon as you join our program, you'll be assigned a mentor who will be respons
 
 We believe that learning happens best when you experiment with code from Day 1. Every week, we will post new content to the repo with `Learning Resources`, `Tasks` and clear `Deliverables` for that week. Please work on them and make sure you submit final deliverable as a `git` repo at the end of every week for your mentor to review. 
 
+## Tasks
+
+There are twenty tasks in this course. Ideally you should aim to complete one task per week. If you've finished a task for the week. Please feel free to work on the next one. Usually, We've seen a lot of parcipants do more than one task / week. The sooner you finish them all, the sooner we can have you work on real world projects. 
+
 ## Learn yourself
 
 Discovering that you can be self taught is an amazing experience. We don't believe in the idea of soemone being there to train you. It limits your potential and doesn't give you a lot of room to grow. We'll never teach you at HackerBay University. We'll however help you learn how to learn on your own so that you are set for life and don't have to wait on anyone to learn and grow. Internet is the best reosurce in the world.

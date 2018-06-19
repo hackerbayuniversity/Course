@@ -1,4 +1,4 @@
-# Week 1 - Getting Started
+# Task 1 - Your first API
 
 ## Learning Resources
 
