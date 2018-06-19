@@ -32,4 +32,14 @@ In line with our motivation to help as many people as possible across the globe 
   * [Contributing Guide](/contribute/README.md)
 * Legal
   * [License](/license/README.md)
-  
+
+### Feedback
+
+#### Feedback for tasks
+
+Please post your feedback for any tasks [here](https://docs.google.com/forms/u/3/d/e/1FAIpQLSdkiXMJrAuaYmZ1aa3U6N6daKXjmdARi1MQahA7bg10MNyjqQ/viewform) so we can improve them for everyone. 
+
+#### Feedback for the course. 
+
+Please post your feedback for the course [here](https://docs.google.com/forms/u/3/d/e/1FAIpQLSdFSk86fsSIyfehHXN2vWfXq9ed3CcLjKs6B6r2OUCbDflCpQ/viewform) so we can improve the course for everyone. 
+
