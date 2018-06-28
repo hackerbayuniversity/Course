@@ -3,7 +3,7 @@
 ## Objectives
 
 - Learn how to connect to database from your backend. 
-- Learn how to save and query data from yoru databse. 
+- Learn how to save and query data from your databse. 
 - Learn Authentication with Passport + JWT. 
 
 ## Learning Resources
