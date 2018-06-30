@@ -2,7 +2,7 @@
 
 ## Objectives
 
-- Lern why unit tests are important. 
+- Learn why unit tests are important. 
 - Write unit tests for your backend. 
 - Integrating Travis CI and CD
 - Use a Code Coverage Tool
