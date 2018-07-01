@@ -1,4 +1,4 @@
-# Task 3 - Unit Tests.
+# Task 4 - Getting started with React and Redux.
 
 ## Objectives
 
