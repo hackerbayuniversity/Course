@@ -42,7 +42,7 @@ In line with our motivation to help as many people as possible across the globe 
 * Contribute
   * [Contributing Guide](/contribute/README.md)
 * Legal
-  * [License](/license/README.md)
+  * [License](/LICENSE)
 
 ## Feedback
 
