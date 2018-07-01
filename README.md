@@ -4,7 +4,7 @@ This handbook is the central repository containing all the learning resources th
 
 In line with our motivation to help as many people as possible across the globe start their journey to the world of tech, this course is open for everyone to follow, learn, grow and contribute. Please clone this repo and make a [Pull Request](https://help.github.com/articles/about-pull-requests/) to `master` if you wish to contribute. 
 
-## Technology Covered
+## Technologies Covered
 - Git
 - React
 - Redux
