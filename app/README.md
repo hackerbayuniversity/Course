@@ -13,7 +13,7 @@ We're working on a server monitoring software. To check a production example - P
 
 
 ### Why server monitoring? 
-It covers most concepts to build an app - from relationships in the database, to workers, to thord party API integration and more. You can finish the app fairly quickly and get a good understanding of all the concepts form `Web Development`
+It covers most concepts to build an app - from relationships in the database, to workers, to thord party API integration and more. You can finish the app fairly quickly and get a good understanding of all the concepts from `Web Development`
 
 ### FAQ
 
