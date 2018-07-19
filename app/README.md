@@ -15,7 +15,7 @@ We're working on a server monitoring software. To check a production example - P
 ### Why server monitoring? 
 It covers most concepts to build an app - from relationships in the database, to workers, to thord party API integration and more. 
 
-### Questions
+### FAQ
 
 **How will the app look like?**
 If you have any question on how the app loosk like - Please check out Fyipe.com. Your mentor should give you a demo account for you to test things out. 
