@@ -26,5 +26,8 @@ No, That's months or years of work. You'll be building a very simple clone - wit
 **I have more questions - who do I ask?**
 If you're enrolled in the program - the best person to ask any question would be your mentor. IF you're not, please write to us at university@hackerbay.io
 
+**Can I build something else?**
+Yes. Please talk to your mentor and confirm your idea with him. 
+
 
 
