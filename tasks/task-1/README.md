@@ -4,6 +4,10 @@
 
 - Learn how server programming works and create your first get and post API. 
 
+## What are you building? 
+
+[Please read this](/app/README.md)
+
 ## Learning Resources
 
 These resources are exactly the one in the [Precourse Learning Resources](/tasks/precourse/README.md). Our aim for this week is to be thorough with these concepts first and apply them on the task mentioned below.
