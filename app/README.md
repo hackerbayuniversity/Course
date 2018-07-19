@@ -13,12 +13,12 @@ We're working on a server monitoring software. To check a production example - P
 
 
 ### Why server monitoring? 
-It covers most concepts to build an app - from relationships in the database, to workers, to thord party API integration and more. 
+It covers most concepts to build an app - from relationships in the database, to workers, to thord party API integration and more. You can finish the app fairly quickly and get a good understanding of all the concepts form `Web Development`
 
 ### FAQ
 
 **How will the app look like?**
-If you have any question on how the app loosk like - Please check out Fyipe.com. Your mentor should give you a demo account for you to test things out. 
+If you have any questions on how the app will look like - Please check out Fyipe.com. Your mentor should give you a demo account for you to test things out. 
 
 **Will I be building the exact clone?**
 No, That's months or years of work. You'll be building a very simple clone - with a simple UI and few API's. 
