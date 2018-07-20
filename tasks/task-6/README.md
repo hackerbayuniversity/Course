@@ -37,58 +37,47 @@ URL | Text | URL of the website
 Status | Text | Status of the Website - if its `Online` or `Offline`
 UserID | Foreign Key | FK to the User Table.
 
+## Important
+
+Please use the same Git Repo for all the tasks. 
+
 ## Tasks
 
-#### Step 1: Create a new NodeJS Project with Express. 
+#### Step 1: Adding a website to the database
 
-- Create a `git` repo on your GitHub account. 
-- Create a simple NodeJS project. 
-- Install `express` with NPM.
-- Run the project, and make sure everything looks okay. 
-- If you have questions on any of these steps. Please google them out. 
+- Create a POST API which takes in name and URL, saves data in the Website table in the database. Returns the complete object with ID `{id: <id>, name: <name>, url: <URL>, userId: <userId>}` as response.
 
+```
+Request Type: POST
+Route: /website/add
+Request Body: `{name: <name>, url: <URL>}`
+Response Code: 200 
+Response Body: `{id: <id>, name: <name>, url: <URL>, userId: <userId>}`
+```
 
-#### Step 2: Your First API. 
-
-Today, you'll be creating your first GET and POST API's. If you don't know what they are. Please checkout [this video.](https://www.youtube.com/watch?v=UObINRj2EGY). 
-
- - Create a GET API. This is a very simple API and returns `{status: success}` as response. 
+- Before you save data. Please check if the user is authenticated and is valid. 
+- Please note user id is not passed from the frontend. You need to decrypt UserID from the session token. 
+- You cannot add the website with the same name or the same URL. If that's the case - return 400 which means Bad Request as status code.  
+- You cannot access the API without the session. If you're not logged in and you're trying to access the API. Return 401 which means Unauthorised as status code.
+- Make sure default status is `Online`
  
- ```
- Request Type: GET
- Route: /
- Response: {status: success}
- ```
 
- - Create a POST API. POST API's are used to save data on the server. Take a request payload `{data: 'Any String'}`. Create a variable that's ourside API scope and saev the data there, once you're done doing that return the same data in the request.  
- 
- ```
- Request Type: POST
- Route: /data
- Request: {data: 'Any String'}
- Response: {data: 'Any String'}
- ```
+#### Step 2: List Websites 
 
+- Create a GET API which returns a list of websites previously saved in the DB. Returns the an array of complete object with ID `[{id: <id>, name: <name>, url: <URL>, userId: <userId>}, {... ..}]` as response.
 
- - Create a GET API. This GET API will be used to get the data that you've saved before with POST. 
- 
- ```
- Request Type: GET
- Route: /data
- Response: {data: 'Any String'}
- ```
- 
- There are a lot of reousrces on Google on how to build API's with express. Please google these resources if you're stuck. 
- 
- 
- #### Step 3: Push your changes to Git
- 
- Push all your changes to your GitHub Repo. 
+```
+Request Type: GET
+Route: /website/list
+Response Code: 200 
+Response Body: `[{id: <id>, name: <name>, url: <URL>, userId: <userId>}, {... ..}]`
+```
+
+- Before you serve the list. Please check if the user is authenticated and is valid. 
+- Please note user id is not passed from the frontend. You need to decrypt UserID from the session token. 
+- If you have an empty list. Return 200 with an empty array. 
+- If the user is not logged in. Return 401.
 
 ## Deliverable
 
-Please submit your GitHub Repo to your mentor as soon as you're done, so he or she can review. 
-
-
-
-
+Push all your changes to your GitHub Repo. Please submit your GitHub Repo to your mentor as soon as you're done, so he or she can review. 
