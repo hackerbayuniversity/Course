@@ -6,23 +6,38 @@
 
 ## App we're building. 
 
-We're building a monitoring software. [Please read this document for details](/app/README.md) 
+We're building a website monitoring software. [Please read this document for details](/app/README.md) 
 
 ## Learning Resources
 
-These resources are exactly the one in the [Precourse Learning Resources](/tasks/precourse/README.md). Our aim for this week is to be thorough with these concepts first and apply them on the task mentioned below.
-
 Topic | Resource
 ------------ | -------------
-HTML and CSS | [Link to this resource](https://www.youtube.com/watch?v=yTHTo28hwTQ&list=PLgGbWId6zgaWZkPFI4Sc9QXDmmOWa1v5F)
-JavaScript for beginners | [Link to this resource](https://www.youtube.com/watch?v=yQaAGmHNn9s&list=PL46F0A159EC02DF82)
-Serverside Programming with NodeJS | [Link to this resource](https://www.youtube.com/watch?v=65a5QQ3ZR2g&list=PL55RiY5tL51oGJorjEgl6NVeDbx_fO5jR)
-Algorithms | [Link to this resource](https://www.coursera.org/learn/algorithms-part1)
 PostgreSQL | [Link to this resource](https://www.youtube.com/watch?v=CkjQSkWl0F0&list=PLFRIKEguV54bgwAcgFiOs5GMo3q2DhVDj)
+Learning Sequelize | [Lionk to this resource](https://www.youtube.com/watch?v=-K9X9VPm4y4&list=PLIGDNOJWiL1-OJp8ZWBO2838ENa0tsy6H)
+Using relationships with ORM | [Link to this resource](https://medium.com/statuscode/using-sequelize-orm-to-manage-relationships-in-a-postgresql-database-4fb3f78dfa5b)
+Many to Many Relationships | [Link to this resource](https://medium.com/@THEozmic/how-to-create-many-to-many-relationship-using-sequelize-orm-postgres-on-express-677753a3edb5)
 
+## Database Design
+
+**Users**
+
+Column Name | Type | Description
+------------ | ------------- | -------------
+ID | - | Auto Generated ID
+Email | Text | Email of User
+Password | Text | Password of the User
+
+**Websites**
+
+Column Name | Type | Description
+------------ | ------------- | -------------
+ID | - | Auto Generated ID
+Name | Text | Name of the website you want to monitor
+URL | Text | URL of the website
+Status | Text | Status of the Website - if its `Online` or `Offline`
+UserID | Foreign Key | FK to the User Table.
 
 ## Tasks
-
 
 #### Step 1: Create a new NodeJS Project with Express. 
 
