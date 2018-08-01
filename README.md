@@ -18,6 +18,7 @@ In line with our motivation to help as many people as possible across the globe 
   * [Guidelines](/guidelines/README.md)
   * [Onboarding Checklist](/checklist/README.md)
   * [App you'll be working on](/app/README.md)
+  * [FAQ](/faq/README.md)
 * Course
   * [Precourse - Before you begin](/tasks/precourse/README.md)
   * [Task 1 - Your first API.](/tasks/task-1/README.md)
