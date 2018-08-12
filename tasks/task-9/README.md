@@ -1,4 +1,4 @@
-# Task 9 - Testing Frontend.
+# Task 9 - Testing Dashboard.
 
 ## Objectives
 
