@@ -4,7 +4,7 @@
 
 We'll be sending you an invite to your registered email id to join our slack group. This group will have engineers from HackerBay, Inc. and all the international participants for a batch joining us for the program from across the globe. This group will ensure collaborative learning and healthy discussions helping you learn from multiple perspectives. We expect you to use the group for learning and healthy discussions only.
 
-Please review this [checklist](/onboarding/README.md) before you join the program. 
+Please review this [checklist](/checklist/README.md) before you join the program. 
 
 ## One on One mentorship
 
