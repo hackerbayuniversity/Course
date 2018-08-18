@@ -16,11 +16,11 @@ We believe that learning happens best when you experiment with code from Day 1. 
 
 ## Tasks
 
-There are twenty tasks in this course. Ideally you should aim to complete one task per week. If you've finished a task for the week. Please feel free to work on the next one. Usually, We've seen a lot of parcipants do more than one task / week. The sooner you finish them all, the sooner we can have you work on real world projects. 
+There are twenty tasks in this course. Ideally you should aim to complete one task per week. If you've finished a task for the week. Please feel free to work on the next one. Usually, we've seen a lot of participants do more than one task / week. The sooner you finish them all, the sooner we can have you work on real world projects. 
 
 ## Learn yourself
 
-Discovering that you can be self taught is an amazing experience. We don't believe in the idea of soemone being there to train you. It limits your potential and doesn't give you a lot of room to grow. We'll never teach you at HackerBay University. We'll however help you learn how to learn on your own so that you are set for life and don't have to wait on anyone to learn and grow. Internet is the best reosurce in the world.
+Discovering that you can be self taught is an amazing experience. We don't believe in the idea of someone being there to train you. It limits your potential and doesn't give you a lot of room to grow. We'll never teach you at HackerBay University. We'll however help you learn how to learn on your own so that you are set for life and don't have to wait on anyone to learn and grow. Internet is the best reosurce in the world.
 
 ## Course content
 
@@ -28,15 +28,15 @@ We'll be providing you contents in the form of videos and tutorials every week. 
 
 ## Practice/implementation
 
-We'll be providing you a wide range of practice sets and tasks that you'll need to complete every week using the concepts you learn till that week. We believe only implementation can help you grow faster in learning tech. Your focus should follow the Pareto principle. If you learn for 20% of your time, you must apply it in the rest 80% of the time to learn the concept thoroughly. This will help you keep it with with yourself for a long time.
+We'll be providing you a wide range of practice sets and tasks that you'll need to complete every week using the concepts you learn till that week. We believe only implementation can help you grow faster in learning tech. Your focus should follow the Pareto principle. If you learn for 20% of your time, you must apply it in the rest 80% of the time to learn the concept thoroughly. This will help you keep it with yourself for a long time.
 
 ## Doubts/queries resolution
 
-Since most of you must be really new to the world of software development, we understand you'll be having a lot of doubts and queries when you start. We want you to know that it is perfectly normal and happens will everyone who starts this journey. To get through it however, you need to be more self reliant and proactive in finding solutions on your own first before asking it to your mentors. Use resources like [StackOverflow](https://stackoverflow.com), [GitHub Issue Tickets](https://guides.github.com/features/issues/), [Google Groups](https://groups.google.com/) just like a real world professional would. This will not only save a lot of time of your mentors but will also help you learn a lot faster plus you'll learn how to fix issues yourself. We believe it is the best way to learn tech.
+Since most of you must be really new to the world of software development, we understand you'll be having a lot of doubts and queries when you start. We want you to know that it is perfectly normal and happens with everyone who starts this journey. To get through it however, you need to be more self reliant and proactive in finding solutions on your own first before asking it to your mentors. Use resources like [StackOverflow](https://stackoverflow.com), [GitHub Issue Tickets](https://guides.github.com/features/issues/), [Google Groups](https://groups.google.com/) just like a real world professional would. This will not only save a lot of time of your mentors but will also help you learn a lot faster plus you'll learn how to fix issues yourself. We believe it is the best way to learn tech.
 
 ## Weekly Standups
 
-Every week you'll be required to attend a stand-up call with your mentor and this should be considered sacred and you shouldn't miss them unless and until it's absolutely impossible to attend. Please make sue you scheudle time with your mentor and have the standup at the same time every week.
+Every week you'll be required to attend a stand-up call with your mentor and this should be considered sacred and you shouldn't miss them unless and until it's absolutely impossible to attend. Please make sure you schedule time with your mentor and have the standup at the same time every week.
 
 ## Daily updates
 
