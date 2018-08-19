@@ -20,7 +20,7 @@ There are twenty tasks in this course. Ideally you should aim to complete one ta
 
 ## Learn yourself
 
-Discovering that you can be self taught is an amazing experience. We don't believe in the idea of someone being there to train you. It limits your potential and doesn't give you a lot of room to grow. We'll never teach you at HackerBay University. We'll however help you learn how to learn on your own so that you are set for life and don't have to wait on anyone to learn and grow. Internet is the best reosurce in the world.
+Discovering that you can be self taught is an amazing experience. We don't believe in the idea of someone being there to train you. It limits your potential and doesn't give you a lot of room to grow. We'll never teach you at HackerBay University. We'll however help you learn how to learn on your own so that you are set for life and don't have to wait on anyone to learn and grow. Internet is the best resource in the world.
 
 ## Course content
 
