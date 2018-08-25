@@ -45,7 +45,7 @@ Today, you'll be creating your first GET and POST API's. If you don't know what 
  Response: {status: success}
  ```
 
- - Create a POST API. POST API's are used to save data on the server. Take a request payload `{data: 'Any String'}`. Create a variable that's ourside API scope and saev the data there, once you're done doing that return the same data in the request.  
+ - Create a POST API. POST API's are used to save data on the server. Take a request payload `{data: 'Any String'}`. Create a variable that's outside API scope and save the data there, once you're done doing that return the same data in the request.  
  
  ```
  Request Type: POST
@@ -63,7 +63,7 @@ Today, you'll be creating your first GET and POST API's. If you don't know what 
  Response: {data: 'Any String'}
  ```
  
- There are a lot of reousrces on Google on how to build API's with express. Please google these resources if you're stuck. 
+ There are a lot of resources on Google on how to build API's with express. Please google these resources if you're stuck. 
  
  
  #### Step 3: Push your changes to Git
