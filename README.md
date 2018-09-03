@@ -31,7 +31,7 @@ In line with our motivation to help as many people as possible across the globe 
   * [Task 8 - Working with Dashboard](/tasks/task-8/README.md)
   * [Task 9 - Working with Dashboard (Tests)](/tasks/task-9/README.md)
   * [Task 10 - Workers](/tasks/task-10/README.md)
-  * [Task 11 - Integrating Third Party API and Libraries](/tasks/task-10/README.md)
+  * [Task 11 - Integrating Third Party API and Libraries](/tasks/task-11/README.md)
   <!-- * 
   * [Task 11 - Working on Dashboard - Part 1 (Tests)](/tasks/task-11/README.md)
   * [Task 12 - Working on Dashboard - Part 2](/tasks/task-12/README.md)
