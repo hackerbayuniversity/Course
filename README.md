@@ -30,7 +30,7 @@ In line with our motivation to help as many people as possible across the globe 
   * [Task 7 - Relationships - Part 1 (Tests)](/tasks/task-7/README.md)
   * [Task 8 - Working with Dashboard](/tasks/task-8/README.md)
   * [Task 9 - Working with Dashboard (Tests)](/tasks/task-9/README.md)
-  * [Task 10 - Working on Dashboard - Part 1](/tasks/task-10/README.md)
+  <!-- * [Task 10 - Working on Dashboard - Part 1](/tasks/task-10/README.md)
   * [Task 11 - Working on Dashboard - Part 1 (Tests)](/tasks/task-11/README.md)
   * [Task 12 - Working on Dashboard - Part 2](/tasks/task-12/README.md)
   * [Task 13 - Working on Dashboard - Part 2 (Tests)](/tasks/task-13/README.md)
@@ -40,7 +40,7 @@ In line with our motivation to help as many people as possible across the globe 
   * [Task 17 - Working with Docker](/tasks/task-17/README.md)
   * [Task 18 - Working with Kubernetes - Part 1](/tasks/task-18/README.md)
   * [Task 19 - Working with Kubernetes - Part 2](/tasks/task-19/README.md)
-  * [Task 20 - Wrap up!](/tasks/task-20/README.md)
+  * [Task 20 - Wrap up!](/tasks/task-20/README.md) -->
 * Contribute
   * [Contributing Guide](/contribute/README.md)
 * Legal
