@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-You have built your first project on Postgre, React, Redux, NodeJS, Docker and Kubernetes. You''ve leant about builing API's on the server, working with a frontend library called React and how that makes your life easier. You've also learnt about working with Redux and state management on your frontend apps and have containerized your application and deployed it to Kubernetes Clusters. 
+Congratulations! You have built your first project on Postgre, React, Redux, NodeJS, Docker and Kubernetes. You''ve leant about builing API's on the server, working with a frontend library called React and how that makes your life easier. You've also learnt about working with Redux and state management on your frontend apps and have containerized your application and deployed it to Kubernetes Clusters. 
 
 Kubernetes works on any cloud out there. Be it Google Cloud Platform, Azure, AWS or Digital Ocean. If you're curious - you can create an account there and deploy your service out to public. All of these services give you feww tier that should be sufficient for experimental use. 
 
