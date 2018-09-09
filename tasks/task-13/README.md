@@ -1,4 +1,4 @@
-# Task 13 - Container Orchestration - Part 1
+# Task 13 - Container Orchestration with Kubernetes - Part 1
 
 ## Objectives
 

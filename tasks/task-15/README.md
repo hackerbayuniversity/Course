@@ -1,9 +1,9 @@
-# Task 9 - Working with Third Party API's and libraries.
+# Task 15 - Conclusion and What's next. 
 
 ## Objectives
 
-- Learn to implement third party API and libraries with your application.
-- Learn to send SMS with Twilio.
+- Learn why container orchestration is important. 
+- Learn Kubernetes. 
 
 ## Learning Resources
 
@@ -11,29 +11,35 @@ Here are the list of learning resources for this task.
 
 Topic | Resource
 ------------ | -------------
-Documentation | [Link to this resource](https://www.twilio.com/docs/)
-
+What is Kubernetes | [Link to this resource](https://www.youtube.com/watch?v=F-p_7XaEC84)
+Learn Kubernetes | [Link to this resource](https://www.youtube.com/watch?v=R-3dfURb2hA&list=PLbG4OyfwIxjFE5Ban_n2JdGad4EDWmisR)
+Kubernetes Tutorial | [Link to this resource](https://www.youtube.com/watch?v=tqr581_bBM0&list=PLot-YkcC7wZ9xwMzkzR_EkOrPahSofe5Q)
 
 ## Tasks
 
-#### Step 1: Add a new column to user table.
+#### Step 1: Deploy Replication Controllers for Frontend and the Backend. 
 
-- Add a Phone Number column to user table. Collect that info on the signup form.  
+- Create Kubernetes Replication Controller and Pods for Frontend and Backend. [Check this out to learn what replication controllers are](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/). 
 
-#### Step 2: Send SMS when Website is down. 
+- Make sure the pod count of Frontend and Backend is 1 if you're running this locally. If you're running this in production, pod count should atleast be 3. 
 
-- Create a new account on Twilio. They have you $10 free. That's a lot to test and integrate SMS functionality.
--  In the cron job you've built in Task 10. When the website goes down, send an SMS to the user on the Phone Number you collected during signup. 
-- Make sure you dont send an SMS every minute, you only send when the status changes. 
-- Send an SMS when the website is back online. 
+- Make sure backend connects to PostgreSQL properly. 
 
+#### Step 2: Deploy Services. 
 
-#### Step 3: Test. 
+- Create two services one for the frontend and one for the backend. Connect these services to Kubernetes RC's. 
+- Services will expose a public IP address that you can then attach to your Domain's DNS. (If you have a domain you already own, try this out. If you don't have a domain. You can buy one or completely ignore this point.)
 
-- Unit test the SMS sending function that you have created. 
+#### Step 3: Deploy Autoscaling Rules
+
+- [Set up Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) for frontend and the backend. 
+
+#### Step 4: Test
+
+- Test if the service is working properly. 
 
 ## Deliverable
 
-- Push changes to Git, make sure the build passes. 
+- Push your kubernetes `yaml` or `json` files to your new GitHub repo. 
 
 
