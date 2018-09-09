@@ -32,17 +32,11 @@ In line with our motivation to help as many people as possible across the globe 
   * [Task 9 - Working with Dashboard (Tests)](/tasks/task-9/README.md)
   * [Task 10 - Workers](/tasks/task-10/README.md)
   * [Task 11 - Integrating Third Party API and Libraries](/tasks/task-11/README.md)
-  <!-- * 
-  * [Task 11 - Working on Dashboard - Part 1 (Tests)](/tasks/task-11/README.md)
-  * [Task 12 - Working on Dashboard - Part 2](/tasks/task-12/README.md)
-  * [Task 13 - Working on Dashboard - Part 2 (Tests)](/tasks/task-13/README.md)
-  * [Task 14 - Workers](/tasks/task-14/README.md)
-  * [Task 15 - Integrating with third party API's](/tasks/task-15/README.md)
-  * [Task 16 - Continous Integration and Delivery](/tasks/task-16/README.md)
-  * [Task 17 - Working with Docker](/tasks/task-17/README.md)
-  * [Task 18 - Working with Kubernetes - Part 1](/tasks/task-18/README.md)
-  * [Task 19 - Working with Kubernetes - Part 2](/tasks/task-19/README.md)
-  * [Task 20 - Wrap up!](/tasks/task-20/README.md) -->
+  * [Task 12 - Containerizing your projects](/tasks/task-12/README.md)
+  * [Task 13 - Container Orchestration - Part 1](/tasks/task-13/README.md)
+  * [Task 14 - Container Orchestration - Part 2](/tasks/task-14/README.md)
+  * [Task 15 - Conclusion and What's next?](/tasks/task-15/README.md)
+  
 * Contribute
   * [Contributing Guide](/contribute/README.md)
 * Legal
