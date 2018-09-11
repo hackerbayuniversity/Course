@@ -1,0 +1,15 @@
+{
+  "name": "first-api",
+  "version": "1.0.0",
+  "description": "Learn how server programming works and create your first get and post API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
