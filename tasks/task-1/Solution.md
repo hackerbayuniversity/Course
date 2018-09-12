@@ -64,7 +64,7 @@ app.post('/data', (req, res) => {
 ```
     
 * To test POST requests we need a app called Postman. Download it here [www.getpostman.com](https://www.getpostman.com)
-* Once downloaded open the app change the following parameters:
+* Once downloaded open the app and change the following parameters:
     * Method from **GET** to **POST**.
     * Url to http://localhost:3000/data.
     * In the **body** tab select **raw** and **JSON(aplication/json)**.

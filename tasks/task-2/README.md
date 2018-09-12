@@ -78,7 +78,7 @@ Request Type: POST
 Route: /user/login
 Request Body: {email: sample@sample.com, password: "WrongPassword"}
 Response Code: 400 
-Response Body: {error: "Invlaid Password"}
+Response Body: {error: "Invalid Password"}
 ```
 
 - If the user does not exists. 
