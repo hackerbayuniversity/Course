@@ -26,7 +26,7 @@ Using Travis with GitHub for CI & CD | [Link to this resource](https://www.youtu
 
 - You've created three API's on Task 1. 
     - `GET /` API which returns static JSON. 
-    - `POST /data` which saves a string on the server
+    - `POST /data` which saves a string on the server.
     - `GET /data` which retuns the saved string on the server.
 - You've now got to write tests for all of these API's that you've created. 
 - For the `GET /` API. Write test that would
