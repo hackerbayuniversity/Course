@@ -71,7 +71,7 @@ module.exports = User;
 ```
 * The user id is generated automatically.
 ##### 4. Create the first POST API for users.
-* It should expect a body with a email and password and save them to the database.
+* Inside `index.js` after our previous  APIs.
     ```javascript
     app.post('/user/signup', (req, res) => {
     // Here we create our new user from the request body
@@ -158,12 +158,13 @@ Let's tackle them one at the time.
 *Our `/user/signup` API should return a token, this token will help us with our authentication*
 
 * To generate tokens we need to install `jsonwebtoken`.
+
 `npm install jsonwebtoken`
 * Let's bring jsonwebtoken to `/routes/users.js`.
     ```javascript
     const jwt = require('jsonwebtoken');
     ```
-* Now we can create tokens, let's tweak out API.
+* Now we can create tokens, let's tweak out API inside `/routes/users.js`.
     ```javascript
     User.create(newUser)
       // Here we return the user to client.
@@ -199,7 +200,7 @@ Let's tackle them one at the time.
     ```javascript
     const bcrypt = require('bcryptjs');
     ```
-* Now we will add a "hook" right before we export our model.
+* We will add a "hook" right before we export our model in `models/User.js`.
     ```javascript
     // This hook happens before the user is created, here we will hash our password using bcrypt
     User.beforeCreate((user, options) => {
@@ -215,7 +216,7 @@ Let's tackle them one at the time.
 ##### 8. No duplicate users.
 *We don't want two users with the same email, let's fix that*
 * There are different ways to do this but we will do the validation inside our API.
-* Before registering an email we will check if the email it's already in our database.
+* Before registering an email we will check if the email it's already in our database, let's tweak our API inside `routes/users.js`.
     ```javascript
     // We look for an user with the same email we are receiving from the request body
       User.findOne({ where: { email: newUser.email }})
@@ -247,7 +248,7 @@ Let's tackle them one at the time.
 
 #### 9. Login API.
 *Now that we got the signup part done, let's work on the login*
-* The code for this should quite similar to the `/user/signup` API, but now we are not creating any user.
+* The code for this should quite similar to the `/user/signup` API, but now we are not creating any users.
 * First let's bring `bcryptjs` to `routes/users.js` since we will be using it to check our passwords.
     ```javascript
     const bcrypt = require('bcryptjs');
@@ -290,7 +291,7 @@ Let's tackle them one at the time.
       .catch(err => res.status(401).json(err));
     })
     ```
-*A lot of code again, make sure you read through the comments to understand what's going*
+*A lot of code again, make sure you read through the comments to understand what's going on*
 * Now time to test our API, remember that the **url** should be `http://localhost:3000/user/login`, try testing different emails and passwords to see if it works accordingly.
 
 ##### 10. Wrapping up.
