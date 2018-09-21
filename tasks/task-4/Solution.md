@@ -94,7 +94,7 @@
     ```
     * Time to see if it worked! In the command line run `npm start`.
     * A new window should open in your browser with the app running.
-    ![Your signup form](Course/signup-1.png)
+    ![Your signup form](https://raw.githubusercontent.com/hackerbayuniversity/Course/master/signup-1.png)
     
 ##### 4. Submitting our form
 *You can't really see it, but your form is now connected to the redux store. Now let's see how we can get its values.*
@@ -326,7 +326,7 @@
     // Other code
     ```
     * Now let's check the browser to see what's happpening.
-    ![app with router](Course/signup-2.png)
+    ![app with router](https://raw.githubusercontent.com/hackerbayuniversity/Course/master/signup-2.png)
 
 *You are now able to navigate between the signup and login page!*
 
