@@ -6,11 +6,6 @@ const sequelize = require('../db');
 const User = sequelize.define('user', {
   email: {
     type: Sequelize.STRING
-  //   validate: {
-  //     isEmail: {
-  //       msg: 'Email address must be valid.'
-  //               }
-  //   }
   },
   password: {
     type: Sequelize.STRING

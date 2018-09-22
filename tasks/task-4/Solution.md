@@ -1,9 +1,9 @@
 # Task 4 Tutorial
 
-*Time for some front-end action. In this tutorial we will create sign up and login forms with React and Redux. Let's get to work.*
+*Time for some front-end action. In this tutorial we will create sign up and login forms with React and Redux that will interact with APIs we have created. Let's get to work.*
 
 ##### 1. Set up React and Redux
-* Clone the following repository.
+* In a new folder open the command line and run.
     ```bash
     git clone https://github.com/tarique93102/react-redux-starter-template
     ```
@@ -17,7 +17,7 @@
     ```bash
     npm install redux-form
     ```
-* Now pass the formReducer to your store inside `src/reducers/index.js`
+* Now pass the `formReducer` to your store inside `src/reducers/index.js`
     ```javascript
     import { combineReducers } from 'redux';
     import { reducer as formReducer } from 'redux-form'
@@ -32,16 +32,18 @@
     
     export default rootReducers;
     ```
-
+    *This will send the information from our forms to the redux store.*
 ##### 3. Our first form
 
-*Now that ReduxForm is ready, let's create your first form*
+*Now that ReduxForm is ready, let's create your first form.*
 
 * Inside the `components` folder create a file called `Signup.js` with the following code.
     ```javascript
+    // Import react and redux-form
     import React from 'react'
     import { Field, reduxForm } from 'redux-form'
     
+    // Create the Signup component
     let Signup = props => {
       const { handleSubmit } = props
       return (
@@ -59,11 +61,13 @@
       )
     }
     
+    // Connect the Signup component to redux-form and connect it to the store.
     Signup = reduxForm({
       // a unique name for the form
       form: 'signup'
     })(Signup)
     
+    // Export the component
     export default Signup;
     ```
 * Import `Signup.js` to `App.js` so we can actually see it.
@@ -94,7 +98,8 @@
     ```
     * Time to see if it worked! In the command line run `npm start`.
     * A new window should open in your browser with the app running.
-    ![Your signup form](https://raw.githubusercontent.com/hackerbayuniversity/Course/master/signup-1.png)
+    
+    ![Your signup form]('./images/signup-1.png')
     
 ##### 4. Submitting our form
 *You can't really see it, but your form is now connected to the redux store. Now let's see how we can get its values.*
@@ -200,6 +205,8 @@
     ```
 * Now you should see both forms (they are identical) and their values on the console if you click submit.
 
+![signup-login]('./images/signup-login.png')
+
 ##### 5. React router
 *You have your two forms but now you need to find a way to display them in different pages. React router to the rescue!*
 
@@ -272,6 +279,7 @@
     ```
 * Now head to the browser to see what's happening.
 * The home page should be `Signup.js` and if you go to `localhost:3000/login` you should see `Login.js`.
+
 * Pretty cool, but now you need some links to add navigation to your app. Let's start with `Signup.js`
     ```javascript
     // The Link component helps us connect pages
@@ -326,7 +334,8 @@
     // Other code
     ```
     * Now let's check the browser to see what's happpening.
-    ![app with router](https://raw.githubusercontent.com/hackerbayuniversity/Course/master/signup-2.png)
+    
+    ![app with router](./images/signup-2.png)
 
 *You are now able to navigate between the signup and login page!*
 
@@ -335,7 +344,7 @@
 
 *First let's organize your app.*
 * Create two folders, one called `backend` and another one called `frontend`.
-* Inside `backend` copy or clone your app from **task 2** along with the test made in **task 3**.
+* Inside `backend` copy or clone your app from **task 2** along with the tests made in **task 3**.
 * Inside `frontend` move all the code from the react app we made just now. Refer to the `code` folder in this repo if you get lost.
 
 *Now let's connect both apps*
@@ -347,12 +356,12 @@
     ```javascript
     "proxy": "http://localhost:3001/"
     ```
-    This will tell our app server to proxy our API requests to our **task 2** API server.
-* Let's see if this works, we will use a library called `axios` to make requests. Inside your `frontend` folder run.
+    *This will tell our app server to proxy our API requests to our **task 2** API server.*
+* Let's see if this works, we will use a library called `axios` to make requests. Inside your `frontend` folder open the command line and run.
     ```bash
     npm install axios
     ```
-* Now bring `axios` to `App.js` and create a POST request inside our submit function.
+* Now bring `axios` to `src/App.js` and create a POST request inside the submit function.
     ```javascript
     // Other code...
     import axios from 'axios';
@@ -360,7 +369,7 @@
     class App extends Component {
       // Other code ...
       
-      // Our submit function
+      // Submit function
       submit (values) {
         // We make the post request to /user/signup and send the values from the form
         axios.post('/user/signup', values)
@@ -384,30 +393,40 @@
     }
     // Other code...
     ```
-* Now start both backend and fronted servers, go to your browser, input a valid email and password and click on submit.
+* Start both backend and fronted servers.
+    * Inside `backend` run.
+    ```bash
+    npm start
+    ```
+    * In a different command line, inside `fronted` run.
+    ```bash
+    npm start
+    ```
+* Now go to your browser, input a valid email and password and click on submit.
 * You will a see familiar response in the console
     ```javascript
     {session: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6I…YwN30.DOYm-BsPL2syNFWb22NJMtI7yDbyZIUdgxIe0ojw5Ck"}
     ```
-    Of course your token will be different.
+    The token will be different.
     
 *We have succesfully connected our two apps!*
 
 ##### 7. Separating requests
-*Right now both* `Signup` *and* `Login` *have the same* `onSubmit` *function. This is not ok since they should request to two different end points in our backend* `/user/signup` *and* `user/login`.
+*Right now both* `Signup` *and* `Login` *have the same* `onSubmit` *function. This is not ok since they should send requests to two different end points in our backend* `/user/signup` *and* `user/login`.
 
-* Let's fix this by creating two different onSubmit functions.
+* Let's fix this by creating two different `onSubmit` functions.
     ```javascript
     class App extends Component {
       // Other code ...
       
-      // Our submit functions
+      // Submit function for signup
       signup (values) {
         axios.post('/user/signup', values)
         .then(res => console.log(res.data))
         .catch(err => console.log(err.response.data));
       }
-    
+      
+      // Submit function for login
       login (values) {
         axios.post('/user/login', values)
         .then(res => console.log(res.data))
