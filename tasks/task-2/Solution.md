@@ -1,16 +1,19 @@
 ## Task 2 Tutorial
 *Make you sure you have installed postgres correctly before continuing with this tutorial*
-##### 1. Install Sequelize.
-*This is an ORM that will ease our work with Postgres*
-`npm install --save sequelize pg pg-hstore`
-or
-`npm i sequelize pg pg-hstore`
-##### 2. Set up your connection.
-* Create a folder and name it `db`.
-* Inside `db` create a file called `index.js`.
-* Configure Sequelize inside this `index.js` file:
+##### 1. Install Sequelize
+*Sequelize is an ORM that will ease our work with Postgres*
+* Open your command line and run
+    ```bash
+    npm install --save sequelize pg pg-hstore
+    ```
+##### 2. Set up your connection
+*Now that you have installed sequelize it's time to setup your database. Make you sure you know your username, password and that you already created a database.*
+* Inside your root folder create a folder called `db`.
+* Inside `db` create a file called `index.js` and copy the following code.
     ```javascript
+    // require Sequelize
     const Sequelize = require('sequelize');
+    // Create your connection
     const sequelize = new Sequelize('database', 'username', 'password', {
       host: 'localhost',
       dialect: 'postgres',
@@ -24,55 +27,73 @@ or
       }
     });
     
+    // Export it so you can use the connection in your app
     module.exports = sequelize;
     ```
 * Replace the **database**, **username** and **password** values for your own.
-##### 2. Test your connection.
-*We can use the `authenticate()` function to test the connection.*
-* Write the following lines of code before your API routes in* `./code/index.js`
+* Now test your connection inside `index.js`.
     ```javascript
+    // Other code
+    // Require sequelize 
+    const sequelize = require('./db');
+    
+    // Other code
+    app.use(bodyParser.json());
+    
+    // Initialize your connection
     sequelize
       .authenticate()
       .then(() => {
+      // You will see this message if connection is succesful
         console.log('Connection has been established successfully.');
       })
       .catch(err => {
+      // You will see this if the connection was not succesful
         console.error('Unable to connect to the database:', err);
       });
+      
+      // Other code
     ```
-* Remember to import sequelize from your db folder, add the following to the top of the `./code/index.js` file.
-    ```javascript
-    const sequelize = require('./db');
-    ```
-* You should see `Connection has been established successfully.` on the command line.
+* You should now see `Connection has been established successfully.` on the command line.
 
-##### 3. Now let's create a User model.
+##### 3. Create your first model.
+*A **model** represents a table in the database. Instances of this class represent a database row. For this app you need to create a user **model***
 * Our User model should have the following properties
     * id
     * email
     * password
-* Inside `./code` create a folder called `models`.
+
+*Now that you know what you want, let's create the User model.*
+* Inside your root folder create a folder called `models`.
 * Inside models create a file called `User.js`
-* In `./code/models/User.js` define your the User model.
-```javascript
-const Sequelize = require('sequelize');
-const sequelize = require('../db');
-
-const User = sequelize.define('user', {
-  email: {
-    type: Sequelize.STRING
-  },
-  password: {
-    type: Sequelize.STRING
-  }
-});
-
-module.exports = User;
-```
-* The user id is generated automatically.
-##### 4. Create the first POST API for users.
-* Inside `index.js` after our previous  APIs.
+* In `models/User.js` define your the User model.
     ```javascript
+    // Require sequelize and your connection to the database
+    const Sequelize = require('sequelize');
+    const sequelize = require('../db');
+    
+    // Define the User model
+    const User = sequelize.define('user', {
+      // Define attributes
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      }
+    });
+    
+    // export it 
+    module.exports = User;
+    ```
+    *The user id is generated automatically.*
+    
+##### 4. Create a POST API for users.
+*Now that we defined our User model we can create requests and interact with the database.*
+* Inside `index.js` after our previous  APIs write the following code.
+    ```javascript
+    // Other code
+    
     app.post('/user/signup', (req, res) => {
     // Here we create our new user from the request body
       let newUser = {
@@ -84,27 +105,28 @@ module.exports = User;
       // Here we return the user to client.
       .then(user => res.json(user));
     })
+    
+    // Other code
     ```
 * Let's test it with Postman, remember that the **url** should be `http://localhost:3000/user/signup` and the **body** should be something like this:
     ```json
     {
-      "email": "test",
+      "email": "test@mail.com",
       "password": "123456"
     }
     ```
-* After clicking "SEND" this should appear in the response body.
+    ![postman example](./images/postman-api.png)
+* After clicking "SEND" a similar response should appear in the response body.
     ```json
     {
         "id": 1,
-        "email": "test",
+        "email": "test@mail.com",
         "password": "123456",
         "updatedAt": "2018-09-11T10:15:36.599Z",
         "createdAt": "2018-09-11T10:15:36.599Z"
     }
     ```
-* Some values will not be same but that is ok. Good job!
-
-Our API is officially connected to the database! But we still have some work to do.
+*Our API is officially connected to the database! But we still have some work to do.*
 * Our `/user` APIs are inside `index.js`.
 * The API should return a token.
 * We are storing our passwords in plain text.
@@ -116,57 +138,78 @@ Let's tackle them one at the time.
 * Inside the root folder create a folder called `routes`
 * Inside `routes` create a file called `users.js` and write the following code:
     ```javascript
-    // We create our router
+    // Create our router
     const express = require('express');
     const router = express.Router();
-    // We import the User model
+    // Import the User model
     const User = require('../models/User');
     
-    // Our API is now here
+    // Move our API here
     router.post('/signup', (req, res) => {
       // Here we create our new user from the request body
       let newUser = {
         email: req.body.email,
         password: req.body.password
       }
-      
+      // Create a new user
       User.create(newUser)
-      // Here we return the user to client.
+      // Return the user to client.
       .then(user => res.json(user))
       // Our error catcher
       .catch(err => res.status(401).json({ msg: 'Ups'}));
     });
-    // We export it so index.js can use it
+    // Export it
     module.exports = router;
     ```
-*Now we need to do some changes in index.js.*
-* Let's delete our `/user/signup` since we already have it somewhere else.
-* Now we need to add the following after we test our Sequelize connection.
+* Now that you moved the `users` route let's remove the API from `index.js`.
     ```javascript
-    // This tells our app to use this file for the /user route.
-    app.use('/user', user);
+    // Other code
+    const sequelize = require('./db');
+    // Require the users route
+    const users = require('./routes/users');
+    
+    // Other code
+    sequelize
+      .authenticate()
+      .then(() => {
+        console.log('Connection has been established successfully.');
+      })
+      .catch(err => {
+        console.error('Unable to connect to the database:', err);
+      });
+    
+    // Tell you app to use routes/users.
+    app.use('/users', users);
+    
+    // Other code
     ```
-* After we require sequelize, let's also bring the users route.
-    ```javascript
-    const user = require('./routes/users');
-    ```
-* Let's test the `user/signup` API again, it should be working normally.
+* Let's test the `user/signup` API with Postman again, it should be working normally.
  
 *We just moved our `user` APIs to a different folder! This will help our code look cleaner*
 
 ##### 6. Tokens and Authentication.
-*Our `/user/signup` API should return a token, this token will help us with our authentication*
+*The* `/user/signup` *API should return a token, this token will help us with our authentication in the future.*
 
-* To generate tokens we need to install `jsonwebtoken`.
-
-`npm install jsonwebtoken`
-* Let's bring jsonwebtoken to `/routes/users.js`.
+* To generate tokens you need to install `jsonwebtoken`.
+* In the command line, inside your root folder, run.
+    ```bash
+    npm install jsonwebtoken
+    ```
+* After the installation is done bring `jsonwebtoken` to `/routes/users.js`.
     ```javascript
     const jwt = require('jsonwebtoken');
     ```
 * Now we can create tokens, let's tweak out API inside `/routes/users.js`.
     ```javascript
-    User.create(newUser)
+    // Other code
+    router.post('/signup', (req, res) => {
+      // Here we create our new user from the request body
+      let newUser = {
+        email: req.body.email,
+        password: req.body.password
+      }
+      // Create a new user
+     User.create(newUser)
       // Here we return the user to client.
       .then(user => {
         // The token takes a payload that can contain any information you want.
@@ -182,20 +225,24 @@ Let's tackle them one at the time.
       })
       // Our error catcher
       .catch(err => res.status(401).json({ msg: 'Ups'}));
+    }
+    // Other code
     ```
-* Now let's test our API, we should be returning tokens like this:
+* Now let's test the API in Postman, you should see tokens like this in the response body:
     ```json
     {
         "session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QiLCJpYXQiOjE1MzY2NjU4NTUsImV4cCI6MTUzNjY2OTQ1NX0.K8aLxEUjxxng-fLtdaeCEh4phERW_OekMwsQk6TY7Mo"
     }
     ```
-*Great, we have tokens! We will use them for authentication later.*
+*Great, you have tokens! You will use them for authentication later.*
 
 ##### 7. Encrypting our passwords.
-*Storing our passwords in plain text is not very safe, let's do something about it*
+*Storing our passwords in plain text is not very safe, let's use* `bcryptjs` *to encrypt our passwords*
 
-* Install `bcryptjs`, on the command line:
-`npm install bcryptjs`
+* Install `bcryptjs`, on the command line run.
+    ```bash
+    npm --save install bcryptjs
+    ```
 * Bring `bcryptjs` to `models/User.js`.
     ```javascript
     const bcrypt = require('bcryptjs');
@@ -204,52 +251,68 @@ Let's tackle them one at the time.
     ```javascript
     // This hook happens before the user is created, here we will hash our password using bcrypt
     User.beforeCreate((user, options) => {
-      let salt = bcrypt.genSaltSync(10);
-      let hash = bcrypt.hashSync(user.password, salt);
-      return user.password = hash;
+        // Generate salt
+        let salt = bcrypt.genSaltSync(10);
+        // Create encrypted password
+        let hash = bcrypt.hashSync(user.password, salt);
+        // replace the password with the hashed password
+        return user.password = hash;
     })
     ```
-* Check your database and you will see that we no longer store the passwords in plain text.
+    
+*Check your database and you will see that passwords are no longer stored in plain text. Good job so far, now on to the next challenge.*
 
-*Good job so far, now on to the next challenge.*
-
-##### 8. No duplicate users.
-*We don't want two users with the same email, let's fix that*
+##### 8. No duplicate users
+*You don't want two users with the same email, let's fix that*
 * There are different ways to do this but we will do the validation inside our API.
 * Before registering an email we will check if the email it's already in our database, let's tweak our API inside `routes/users.js`.
     ```javascript
-    // We look for an user with the same email we are receiving from the request body
+    // Other code
+    
+    router.post('/signup', (req, res) => {
+      // Create a new user from the request body
+      let newUser = {
+        email: req.body.email,
+        password: req.body.password
+      }
+    
+      // Look for an user with the same email as the new user incoming
       User.findOne({ where: { email: newUser.email }})
       .then(user => {
-        // If we find a user with the same email we return an error
-        if(user) return res.status(401).json({ error: "User already exists." })
-        // If not we continue and create the new user
+        // If a user with the same email is found return an error
+        if(user) return res.status(400).json({ msg: 'Email already exists' })
+        // If not continue and create the new user
         else {
+            // Create new user
           User.create(newUser)
-          // Here we return the user to client.
           .then(user => {
             // The token takes a payload that can contain any information you want.
             let payload = {
               email: user.email
             }
-            // For now our secret is fine, but for future projects should protect
-            // your secret and not expose it like this.
+            // 'secret' could be any String and shouldn't be exposed like this in real life projects
+            // Create a token
             jwt.sign(payload, 'secret', { expiresIn: '1h'}, (err, token) => {
-              // Here we send the token to the client.
-              res.json(user)
+              // Send the token to the client.
+              res.json({session: token})
             })
           })
             }
       })
+      // Our error catcher
+      .catch(err => res.status(401).json(err));
+    });
+    
+    // Other code
     ```
 *Wow! that was a lot of code, take some time and read throught the comments to understand what's going on.*
 
-*Now onto our next API.*
+*Now onto the next API.*
 
 #### 9. Login API.
-*Now that we got the signup part done, let's work on the login*
-* The code for this should quite similar to the `/user/signup` API, but now we are not creating any users.
-* First let's bring `bcryptjs` to `routes/users.js` since we will be using it to check our passwords.
+*Let's create an API that will allow the users to log in.*
+* The code for this should quite similar to the `/user/signup` API, but now we are not creating any users, we are checking if they exists in the database.
+* First let's bring `bcryptjs` to `routes/users.js` since we will be using it to check the passwords.
     ```javascript
     const bcrypt = require('bcryptjs');
     ```
@@ -270,7 +333,7 @@ Let's tackle them one at the time.
           // compare takes the plain text password and the hash stored in our database
           bcrypt.compare(newUser.password, user.password)
           .then(isMatch => {
-            // If the password is correct then return the token
+            // isMatch will be true if the passwords match
             if(isMatch) {
               let payload = { email: user.email }
               jwt.sign(payload, 'secret', { expiresIn: '1h'}, (err, token) => {
@@ -292,12 +355,8 @@ Let's tackle them one at the time.
     })
     ```
 *A lot of code again, make sure you read through the comments to understand what's going on*
-* Now time to test our API, remember that the **url** should be `http://localhost:3000/user/login`, try testing different emails and passwords to see if it works accordingly.
+* Now time to test our API in Postman, remember that the **url** should be `http://localhost:3000/user/login`, try testing different emails and passwords to see if it works accordingly.
+![login-postman](./images/postman-api-login.png)
 
-##### 10. Wrapping up.
-*This tutorial is over but there is a lot more you could implement in this app, here are some ideas:*
-* **Email validation:** right now we are not checking if we are getting a valid email.
-* **Protected routes:** with the tokens we can create protected routes.
-* **Update API:** we can create an API to update our users information.
-
-*And many more, this tutorial is nowhere near perfect but I hope it can get you started and help you grasp some of this concepts. I encourage you to start everything from scratch without the tutorial. Be wild and experiment!*
+##### 10. Wrapping up
+*This tutorial is over but there is a lot more you could implement in this app, but don't worry you will get into in the next tutorials. For now take some time to really understand what your code is doing, read docs, try to build it on your, etc.*
