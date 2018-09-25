@@ -10,9 +10,6 @@ router.get('/list',
 	let pureToken = req.get('Authorization').slice(7)
 	let currentUser = jwt.verify(pureToken, 'secret');
 
-	// Check if body is null
-	if(req.body.constructor === Object && Object.keys(req.body).length === 0) return res.status(400).json({ msg: 'Invalid data' })
-
 	models.Website.findAll({
 		where: {
 			UserId: currentUser.id
@@ -28,6 +25,8 @@ router.post('/add',
 
 	let pureToken = req.get('Authorization').slice(7)
 	let currentUser = jwt.verify(pureToken, 'secret');
+
+	if(req.body.constructor === Object && Object.keys(req.body).length === 0) return res.status(400).json({ msg: 'Invalid data' })
 
 	let newWebsite = {
 		name: req.body.name,
