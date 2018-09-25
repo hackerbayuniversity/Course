@@ -2,13 +2,13 @@
 *In this tutorial we will implement new features to the backend API we made in task 4 and create a website monitoring software.*
 
 ##### 1. Create a Website model in our database
-*At the moment we only have a* `User` *model in our database. That needs to change since you need users to create website entries in your database. Let's create our website model.*
-* The website model needs to contain three important entries.
+*At the moment we only have a* `User` *model in our database. That needs to change since you need to create website entries in your database. Let's create our website model.*
+* The website model needs to contain three properties.
     * Name.
     * Url.
     * Status.
     * User id *(Id of the user who creates the entry)*.
-* First of all we need to do some changes in our `models` folder.
+* First of all you need to do some changes in our `models` folder.
 * Inside the `models` folder create a file called `index.js` and copy the following code.
     ```javascript
     const fs = require('fs');
@@ -19,16 +19,19 @@
     
     let db = {};
     
+    // Read the models directory
     fs
       .readdirSync(__dirname)
+      // filter to return only models
       .filter(file => {
         return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
       })
       .forEach(file => {
+        // We import each model in our database
         var model = sequelize['import'](path.join(__dirname, file));
         db[model.name] = model;
       });
-    
+    // Associate odels
     Object.keys(db).forEach(modelName => {
       if (db[modelName].associate) {
         db[modelName].associate(db);
@@ -54,7 +57,8 @@
       User.associate = function (models) {
         models.User.hasMany(models.Website);
       };
-    
+      
+      // Encrypt password
       User.beforeCreate((user, options) => {
       let salt = bcrypt.genSaltSync(10);
       let hash = bcrypt.hashSync(user.password, salt);
@@ -64,7 +68,7 @@
       return User;
     };
     ```
-    *The idea is basically the same, we are just exporting an function now. Other than the association we created (we will talk about it later) this shouldn't be too confusing.*
+    *The idea is basically the same, we are just exporting a function now. Other than the association we created (we will talk about it later) this shouldn't be too confusing.*
 * At last we can create the `Website.js` file.
     ```javascript
     module.exports = (sequelize, DataTypes) => {
@@ -85,7 +89,7 @@
       return Website;
     };
     ```
-    *Hopefully you noticed the associations created. The* `Website` *model "belongs to" a* `User` *model. This means everytime we create a* `Website` *it will have a connection to a* `User`. *We did the same in* `User.js` *just the other way around.* `User` *"has many"* `Website`.
+    *Hopefully you noticed the associations created. The* `Website` *model "belongs to" a* `User` *model. This means everytime we create a* `Website` *it will have a connection to a* `User` *a* `UserId` *property. We did the same in* `User.js` *just the other way around.* `User` *"has many"* `Website`.
 * That was a lot of changes, but now our models should be good to go and be connected to our routes.
 
 ##### 2. Create a /websites route
@@ -97,13 +101,14 @@
     const router = express.Router();
     const models = require('../models/');
     
+    // API endpoint
     router.post('/add', (req, res) => {
-        
+      // New website
       let newWebsite = {
         name: req.body.name,
         url: req.body.url
       }
-    
+      // Check if the website is a duplicate
       models.Website.find({
         where: {
           UserId: currentUser.id,
@@ -111,8 +116,10 @@
         }
       })
       .then(website => {
+        // If it is a duplicate return error
         if(website) res.status(400).json({ msg: "Website already added" })
         else {
+          // If not create website
           models.Website.create(newWebsite)
           .then(website => {
             website.setUser(currentUser.id)
@@ -134,26 +141,32 @@
     npm install passport passport-jwt
     ```
 * Now create a folder called `passport`.
-* Inside `passport` create a file called `index.js`. Here we will configure our passport strategy.
+* Inside `passport` create a file called `index.js`. Here you will configure the passport strategy.
     ```javascript
     const JwtStrategy = require('passport-jwt').Strategy;
     const ExtractJwt = require('passport-jwt').ExtractJwt;
     const models = require('../models')
     
+    // Options for the authentication
     let opts = {};
     
+    // Set the method and the secret
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken()
     opts.secretOrKey = 'secret';
     
+    // Export the strategy
     module.exports = passport => {
         passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
+            // Find user from payload
             models.User.findOne({
                 where: {
                     email: jwt_payload.email
                     }
                 })
                 .then(user => {
+                    // If user is found return user
                     if (user) return done(null, user);
+                    // If not return error
                     return done(null, false)
                 })
                 .catch(err => console.log(err));
@@ -170,9 +183,11 @@
     
     app.use(bodyParser.json());
     app.use(logger('tiny'));
+    
     //Initialize passport
     app.use(passport.initialize());
-    // You tell passport to use the strategy we made
+    
+    // Tell passport to use the jwt strategy
     require('./passport/')(passport);
     
     // Other code
@@ -181,7 +196,7 @@
     ```
     *This tells your server to use your* `jwt authentication`.
     
-* Next step is to protect the `/websites` routes. Inside `routes/websites` copy the following changes.
+* Next step is to use authentication to protect the `/websites` routes. Inside `routes/websites` copy the following changes.
     ```javascript
     // Other code
     // require passport and jwt
@@ -193,8 +208,9 @@
     router.get('/list',
       passport.authenticate('jwt', { session: false }),
       (req, res) => {
-      // we extract the token from the headers
+      // Extract the token from the headers
       let pureToken = req.get('Authorization').slice(7)
+      
       // store the user info with jwt verify
       let currentUser = jwt.verify(pureToken, 'secret');
       
@@ -214,12 +230,17 @@
     router.post('/add',
       passport.authenticate('jwt', { session: false }),
       (req, res) => {
+      
         // we extract the token from the headers
       let pureToken = req.get('Authorization').slice(7);
+      
       // store the user info with jwt verify
       let currentUser = jwt.verify(pureToken, 'secret');
-        
-        // incoming website
+
+      // Check if body is null
+      if(req.body.constructor === Object && Object.keys(req.body).length === 0) return res.status(400).json({ msg: 'Invalid data' })
+
+      // incoming website
       let newWebsite = {
         name: req.body.name,
         url: req.body.url
@@ -250,6 +271,7 @@
             website.setUser(currentUser.id)
             res.json(website)
             })
+            .catch(err => res.status(400).json(err))
           }
         })
       })
