@@ -6,12 +6,12 @@ In line with our motivation to help as many people as possible across the globe 
 
 ## Technologies Covered
 - Git
+- NodeJS
+- PostgreSQL
 - React
 - Redux
 - Docker
 - Kubernetes
-- NodeJS
-- PostgreSQL
 
 ## Contents
 * General
