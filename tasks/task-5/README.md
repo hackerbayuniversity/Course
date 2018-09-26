@@ -45,5 +45,3 @@ Jest Crash Course | [Link to this resource](https://www.youtube.com/watch?v=7r4x
 
 - Push changes to your frontend Git Repo with tests. 
 - Make sure the build passes on Travis. 
-
-
