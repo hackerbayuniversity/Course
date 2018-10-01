@@ -12,11 +12,6 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 
 class App extends Component {
-
-  componentDidMount() {
-    // call default function to display redux operation
-    this.props.defaultFunction();
-  }
   
   // Our submit function
   signup (values) {
