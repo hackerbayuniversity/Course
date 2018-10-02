@@ -10,7 +10,7 @@ We're working on a server monitoring software. To check a production example - P
 - The app will check the website every minute and will let the user know when it's down.
 - The user will be alerted via email, call, SMS.
 - User can also attach his twitter account and the updates about the website will be posted there.
-- Dashobard will show the uptime percent from the day the `websites to monitor` were added and will also show the current status of the website - If its `Online` or `Offline`
+- Dashbard will show the uptime percent from the day the `websites to monitor` were added and will also show the current status of the website - If its `Online` or `Offline`
 
 ### Why server monitoring?
 
