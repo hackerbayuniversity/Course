@@ -110,12 +110,19 @@
     ```javascript
     npm i --save-dev react-test-renderer
     ```
+* Inside `src/test` create a file called `storyshots.test.js` and copy the following code.
+    ```javascript
+    import initStoryshots from '@storybook/addon-storyshots';
+
+    initStoryshots({ /* configuration options */ });
+    ```
 * Delete `src/App.test.js` since you will not be using it.
 * On the command line run.
     ```bash
     npm test
     ```
 * You should see something like this.
+
 ![snapshot-1](./images/snapshot-1.png)
 
 
