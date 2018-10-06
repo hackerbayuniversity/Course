@@ -19,7 +19,7 @@ Node Cron Documentation | [Link to this resource](https://github.com/kelektiv/no
 
 #### Step 1: Set up Cron Job 
 
-- Create a new folder ony our backend called `workers`, and create a new file in that folder called `uptime.js`.
+- Create a new folder on our backend called `workers`, and create a new file in that folder called `uptime.js`.
 -  NPM install the `node-cron` module. 
 - Create a new job and schedule it to run every minute. 
 
@@ -32,7 +32,7 @@ Node Cron Documentation | [Link to this resource](https://github.com/kelektiv/no
 
 #### Step 3: Test
 
--  Unit test the worker by adding few test websites (test cases). When you run the test, it should wait for a moinute and then check the results. Validate if the results are correct. 
+-  Unit test the worker by adding few test websites (test cases). When you run the test, it should wait for a minute and then check the results. Validate if the results are correct. 
 
 ## Deliverable
 
