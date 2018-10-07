@@ -168,6 +168,7 @@ describe('Workers tests', () => {
 	before(done => {
 		let clock = sinon.useFakeTimers();
 
+		statusJob.start();
 		clock.tick(120000);
 		statusJob.stop();
 		clock.restore();
