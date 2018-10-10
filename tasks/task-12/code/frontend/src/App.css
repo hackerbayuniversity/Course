@@ -1,0 +1,12 @@
+form {
+  border: solid 1px black;
+  padding: 15px;
+  margin: 15px;
+  width: 30vw;
+  text-align: center;
+}
+
+.websites {
+  padding: 15px;
+  margin: 15px;
+}

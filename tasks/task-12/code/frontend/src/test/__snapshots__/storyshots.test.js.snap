@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Signup and Login Login 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h2>
+    Login!
+  </h2>
+  <div>
+    <label
+      htmlFor="email"
+    >
+      Email
+    </label>
+    <br />
+    <input
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+      onFocus={[Function]}
+      type="email"
+      value=""
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="password"
+    >
+      Password
+    </label>
+    <br />
+    <input
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+      onFocus={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+  <p>
+    Already have and account? 
+    <br />
+     Click 
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      here
+    </a>
+  </p>
+</form>
+`;
+
+exports[`Storyshots Signup and Login Signup 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h2>
+    Sign up!
+  </h2>
+  <div>
+    <label
+      htmlFor="email"
+    >
+      Email
+    </label>
+    <br />
+    <input
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+      onFocus={[Function]}
+      type="email"
+      value=""
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="password"
+    >
+      Password
+    </label>
+    <br />
+    <input
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+      onFocus={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+  <p>
+    Already have and account? 
+    <br />
+     Click 
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+      here
+    </a>
+  </p>
+</form>
+`;
