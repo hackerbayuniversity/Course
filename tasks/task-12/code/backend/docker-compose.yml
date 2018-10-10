@@ -1,0 +1,29 @@
+version: '3'
+services:
+  app:
+    container_name: docker-node
+    restart: always
+    build: .
+    ports:
+      - '3001:3001'
+    links:
+      - db
+    depends_on: 
+      - db
+    environment:
+      DB_HOST: db
+  db:
+    container_name: postgres
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_DB: web_monitor
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:5432"]
+        interval: 30s
+        timeout: 15s
+        retries: 5
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d/
