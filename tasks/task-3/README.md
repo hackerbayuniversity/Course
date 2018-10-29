@@ -16,7 +16,7 @@ Topic | Resource
 Why unit tests? | [Link to this resource](https://www.youtube.com/watch?v=Eu35xM76kKY)
 Your first tests | [Link to this resource](https://www.youtube.com/watch?v=XsFQEUP1MxI)
 Intro to JavaScript Unit Tests with Mocha and Chai | [Link to this resource](https://www.youtube.com/watch?v=MLTRHc5dk6s)
-Unit Testign with Mocha and Chai | [Link to this resource](https://www.youtube.com/playlist?list=PLXSs3HKyWAE5k-l3edQLn8uai4-WHHudB)
+Unit Testing with Mocha and Chai | [Link to this resource](https://www.youtube.com/playlist?list=PLXSs3HKyWAE5k-l3edQLn8uai4-WHHudB)
 Using Travis with GitHub for CI & CD | [Link to this resource](https://www.youtube.com/watch?v=Uft5KBimzyk)
 
 
